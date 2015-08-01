@@ -1,0 +1,23 @@
+
+{
+  "songs": [
+    
+    { 
+      "name": "Ironic",
+      "artist": "Alanis Morisette",
+      "album": "Jagged Little Pill"      
+    },
+   
+    { 
+      "name": "Waking Light",
+      "artist": "Beck",
+      "album": "Morning Phase"      
+    },
+   
+    { 
+      "name": "There's No Way Out Of Here",
+      "artist": "David Gilmour",
+      "album": "David Gilmour"      
+    }
+  ]
+}

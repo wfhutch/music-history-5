@@ -1,0 +1,27 @@
+
+{
+  "songs": [
+
+    { 
+      "name": "The Logical Song",
+      "artist": "Supertramp",
+      "album": "Breakfast in America"     
+    },
+   
+    { 
+      "name": "Another Brick in the Wall",
+      "artist": "Pink Floyd",
+      "album": "The Wall"     
+    },
+    
+    {
+      "name": "Welcome to the Jungle",
+      "artist": "Guns & Roses",
+      "album": "Appetite for Destruction"      
+    }
+  ]
+}
+
+
+
+

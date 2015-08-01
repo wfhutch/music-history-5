@@ -1,0 +1,169 @@
+body {
+  width: 95%;
+  margin: 15px auto;
+}
+
+.flexbox {
+  display: flex;
+}
+
+
+/***************************
+HEADER 
+****************************/
+
+#header {
+  border: 2px solid black;
+  background-color: #ffb4b0;
+}
+
+#header li {
+  display: inline-block;
+  flex-flow: row-wrap;
+}
+
+
+/**************************
+LEFT SIDE
+***************************/
+
+/***** entire box *****/
+
+#choices {
+  border: 2px solid black;
+  width: 23%;
+  min-width: 100px;
+  margin: 15px auto 0 0;
+  padding: 12px;
+  float: left;
+  background-color: #4dd7fa;
+}
+
+/***** length slider *****/
+
+input[type=range] {
+  margin-bottom: 15px;
+  margin-left: 10px;
+  width: 90%;
+}
+
+/***** artist and album *****/
+
+select {
+  margin-bottom: 15px;
+  margin-left: 10px;
+  width: 90%;
+  border: 2px solid black;
+  background: white;
+  height: 23px;
+}
+
+
+/***** genre *****/
+
+legend {
+  margin-bottom: 10px;
+}
+
+table {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.genre-table td {
+  line-height: 1.625em;
+}
+
+span {
+  padding: 2px;
+}
+
+/***** filter button *****/
+
+.button {
+  text-align: center;
+}
+
+input[type=submit] {
+  margin-bottom: 10px;
+  border: 2px solid black;
+  width: 60%;
+  height: 23px;
+  background: #f1f1f1;
+  border-radius: 5px;
+  font-size: .9em;
+}
+
+
+
+/*********************
+RIGHT SIDE
+**********************/
+
+#content {
+  margin: 15px 0 0 auto;
+  border: 2px solid black;
+  width: 73%;
+  line-height: 1.2em;
+  float: right;
+  background-color: #FEFAC0;
+}
+
+/*#content li {
+  display: inline-block;
+  padding: 3px;
+}*/
+
+#content h2 {
+  padding: 10px;
+  margin-left: 20px;
+  color: #785616;
+  font-weight: bold;
+}
+
+.songinfo {
+  margin-left: 30px;
+}
+
+.songs {
+  font-size: 1.1em;
+  margin: 30px 30px 30px 30px;
+}
+
+.songs:first-child {
+  font-weight: 600;
+}
+
+.songs:nth-of-type(2n+0) {
+  background-color: #fff5ee;
+}
+
+.songs:nth-of-type(2n+1) {
+  background-color: #f5fffa;
+}
+
+.deleteButton {
+  width: 60px;
+  height: 20px;
+  margin: 0 0 10px 30px;
+  border-radius: 10px;
+  background-color: #f1f1f1;
+
+}
+
+/*#moreDiv {
+
+}*/
+
+.moreButton {
+  float: right;
+  margin-right: 30px;
+  padding: 10px;
+  width: 100px;
+  height: 50px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  font-size: .8em;
+  background-color: #f1f1f1;
+}
+
