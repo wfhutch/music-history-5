@@ -1,20 +1,17 @@
 
 
 define(function() {
-  var songs = [];
 
   return {
-    querySongs: function() {
-      $.ajax({
-        url: "javascripts/songs2.json",
-        async: false
-      }).done(function(data) {
-        songs = data.songs;
-      });
+    querySongs: function(callback) {
+
+        $.ajax({
+          url: "./javascripts/songs2.json",
+          // async: false
+        }).done(function(jquerydata) {
+          callback.call(this, jquerydata.songs)
+        });
     },
-    getSongs: function() {
-      return songs;
-    }
   };
 });
 
