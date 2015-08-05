@@ -4,92 +4,206 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Nashville Software School</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Music-History-5</title>
+  <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
 </head>
 
 <body>
-  <header id="header">
-    <nav>
-      <ul>
-        <li>View Music</li>
-        <li>|</li>
-        <li><a href="#">Add Music</li></a>
-        <li>|</li>
-        <li><a href="#">Profile</li></a>
-      </ul>
-    </nav>
-  </header>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <span class="glyphicon glyphicon-equalizer" aria-hidden="true"></span>
+      <li class="nav-li"><a href="#">Add Music</a></li>
+      <li class="nav-li"><a href="#">View Music</a></li>
+      <li class="nav-li"><a href="#">Profile</a></li>
+    </div>
+  </nav>
 
-  <!-- OPTIONS BOX ON LEFT -->
-  
-  <div class="flexbox">
-    <section id="choices">
-      <div>
-        <legend>Song length:</legend>
-        <input type="range">
+  <div class="container">   <!-- This div holds the whole grid -->
+    <div class="row">
+      <div id="options-box" class="col-md-3 choices">  <!-- This div holds content in the left hand options box -->
+        <div class="row slider">  <!-- Slider row -->
+          <div class="col-md-1"></div>  <!-- Empty spacer -->
+          <div class="col-md-10">
+            <legend>Song length:</legend>
+            <input type="range">
+          </div>
+          <div class="col-md-1"></div>  <!-- Empty spacer -->
+        </div>  <!-- End slider -->
+      
+        <div class="row select-buttons">  <!-- Start Album/Artist select box row -->
+          <div class="col-md-1"></div>  <!-- Empty spacer  -->
+          <div class="col-md-5">  <!-- Artist Button --> 
+            <div class="artist">
+              <legend>Artist:</legend>
+                <div class="btn-group">
+                <button type="button" class="btn btn-primary btn-sm dropdown-toggle artist-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Select <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Supertramp</a></li>
+                  <li><a href="#">Pink Floyd</a></li>
+                  <li><a href="#">Guns & Roses</a></li>
+                  <li><a href="#">Alanis Morrisette</a></li>
+                  <li><a href="#">Beck</a></li>
+                  <li><a href="#">David Gilmour</a></li>
+                </ul>
+                </div>
+            </div>
+          </div>  <!-- End Artist Button -->
+          <div class="col-md-5">  <!-- Album Button -->
+            <div class="album">
+              <legend >Album:</legend>
+            </div>
+
+            <div class="btn-group">
+              <button type="button" class="btn btn-primary btn-sm dropdown-toggle album-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Select <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="#">Morning Phase</a></li>
+                <li><a href="#">The Wall</a></li>
+                <li><a href="#">Jagged Little Pill</a></li>
+                <li><a href="#">Breakfast In America</a></li>
+                <li><a href="#">David Gilmour</a></li>
+              </ul>
+            </div>
+          </div>  <!-- End Album Button -->
+          <div class="col-md-1"></div>  <!-- Empty spacer -->
+        </div>  <!-- End Album/Artist select box row -->
+
+        <div class="row">  <!-- Start genre heading row -->
+          <div class="col-md-1"></div>
+          <div class="col-md-10">
+            <div class="genre">Genre:</div>
+          </div>
+          <div class="col-md-1"></div>
+        </div>  <!-- End genre row -->
+          
+        <div class="row genre-table">  <!-- First row of checkboxes -->
+          <div class="col-md-1"></div>  <!-- Empty space -->
+          <div class="col-md-5">
+            <div>
+              <label><input type="checkbox"> Rock</label>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div>
+              <label><input type="checkbox"> Classical</label>
+            </div>
+          </div>
+          <div class="col-md-1"></div>  <!-- Empty space -->
+        </div>
+        <div class="row genre-table">
+          <div class="col-md-1"></div>  <!-- Empty space -->
+          <div class="col-md-5">
+            <label><input type="checkbox"> Pop</label>
+          </div>
+          <div class="col-md-5">
+            <label><input type="checkbox"> Jazz</label>
+          </div>
+          <div class="col-md-1"></div>  <!-- Empty space -->
+        </div>
+        <div class="row genre-table">
+          <div class="col-md-1"></div>  <!-- Empty space -->
+          <div class="col-md-5">
+            <label><input type="checkbox"> Blues</label>
+          </div>
+          <div class="col-md-5">
+            <label><input type="checkbox"> Hip Hop</label>
+          </div>
+          <div class="col-md-1"></div>  <!-- Empty space -->
+        </div>  <!-- End of all checkboxes -->
+
+        <div id="filter-btn" class="row">  <!-- Filter button row -->
+          <div class="col-md-1"></div>
+          <div class="col-md-10">
+            <div class="button filter">
+              <button type="button" class="btn btn-primary btn-sm filter-button">Filter</button>
+            </div>
+          </div>
+          <div class="col-md-1"></div>
+        </div>  <!-- End filter button row -->
+      
+      </div>  <!-- End options box -->
+    
+      <div class="col-md-1"></div> <!-- Spacer between content boxes -->      
+      
+      <div class="col-md-6 songInfo">  <!-- This div holds song info in right hand box -->
+        <section id="content" class="songs">
+        </section> 
       </div>
-      <div>
-        <legend>Artist:</legend>
-        <select name="artist">
-          <option value="Options">Options</option>
-          <option value="Beck">Beck</option>
-          <option value="PinkFloyd">Pink Floyd</option>
-          <option value="Coldplay">Coldplay</option>
-          <option value "NTB">NEEDTOBREATHE</option>
-          <option value="Hiatt">John Hiatt</option>
-        </select>
-      </div>
-
-      <legend>Album:</legend>
-      <select name="album">
-        <option value="Options">Options</option>
-        <option value="Odelay">Odelay</option>
-        <option value="MorningPhase">Morning Phase</option>
-        <option value="DarkSide">Dark Side Of The Moon</option>
-        <option value="TheWall">The Wall</option>
-        <option value="Parachutes">Parachutes</option>
-        <option value="ARushOfBlood">A Rush Of Blood To The Head</option>
-        <option value="TheHeat">The Heat</option>
-        <option value="TheOutsiders">The Outsiders</option>
-        <option value="BringTheFamily">Bring The Family</option>
-        <option value="SlowTurning">Slow Turning</option>
-      </select>
-
-      <p>Genre:</p>
-
-      <table class="genre-table">
-        <tr>
-          <td><span><input type="checkbox">Rock</span></td>
-          <td><span><input type="checkbox">Classical</span></td>
-        </tr>
-        <tr>
-          <td><span><input type="checkbox">Pop</span></td>
-          <td><span><input type="checkbox">Jazz</span></td>
-        </tr>
-        <tr>
-          <td><span><input type="checkbox">Blues</span></td>
-          <td><span><input type="checkbox">Hip Hop</span></td>
-        </tr>
-      </table>
+      <div class="col-md-2">
+   </div>  <!-- End of row that holds both boxes -->  
+  </div>  <!-- End of grid -->
 
 
-      <div class="button">
-        <input type="submit" value="Filter">
-      </div>
-    </section>
-  
-    <!-- CONTENT BOX ON RIGHT SIDE -->
+<!-- <script src="bower_components/jquery/dist/jquery.min.js"></script> -->
+<script data-main="javascripts/main" src="bower_components/requirejs/require.js"></script>
+<!-- <script type="text/javascript"  src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>  -->
+</body>
+</html>
 
-    <section id="content" class="songs">
-        <!-- song info shows in this section -->
-    </section>  
+
+
+
+ <!--  <div class="container">
+  <div class="row">
+    <div class="col-md-12">
+    <header id="header">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+
+          </div>
+        </div>
+      </nav>
+    </header>
+    </div>
   </div>
 
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
-<script data-main="javascripts/main" src="bower_components/requirejs/require.js"></script>
+  <div class="row">
+    <div class="col-md-3">
+
+      <div class="row">
+        <div class="col-md-10">
+          <div>
+            
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-md-1">
+
+
+
+          
+        </div>
+        <div class="col-md-1">
+
+          
+        </div>
+      </div>
+
+      
+
+
+      
+    </div>
+
+    <div class="col-md-8">
+
+      
+    </div>
+  </div>
+</div>
+
+
 
 </body>
 </html>
 
 
+ -->

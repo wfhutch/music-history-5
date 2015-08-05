@@ -1,0 +1,122 @@
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #333;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+
+.glyphicon.glyphicon-equalizer {
+  font-size: 30px;
+}
+
+.navbar {
+  background-color: #41a1d1;
+}
+
+
+body {
+  background: -webkit-radial-gradient(#41a1d1, white); /* Safari 5.1 to 6.0 */
+  background: -o-radial-gradient(#41a1d1, white); /* For Opera 11.6 to 12.0 */
+  background: -moz-radial-gradient(#41a1d1, white); /* For Firefox 3.6 to 15 */
+  background: radial-gradient(#41a1d1, white); /* Standard syntax */
+}
+
+.nav-li {
+  display: inline-block;
+  padding: 30px;
+  font-size: 16px;
+}
+
+.nav-li a {
+  color: blue;
+}
+
+.nav li:first-child {
+  margin-left: 20px;
+}
+
+input[type=range] {
+  margin-bottom: 25px;
+}
+
+legend {
+  border-bottom: none;
+  font-size: 20px;
+}
+
+div.genre {
+  font-size: 15px;
+  margin-top: 20px;
+}
+
+div.box{
+  font-size: 30px;
+}
+
+
+label {
+  font-family: Helvetica;
+  font-size: 12px;
+  padding: 3px;
+  font-weight: 600;
+}
+
+#filter-btn {
+  margin-top: 15px;
+}
+
+.filter-button {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.songinfo {
+  font-size: 16px;
+}
+
+.moreButton {
+  float: right;
+  margin-bottom: 15px;
+}
+
+.songInfo {
+  // border: 1px solid blue;
+  // background-color: #d7ebf5;
+}
+
+.choices {
+  // background-color: #d7ebf5;
+  // border: 1px solid blue;
+}
+
+.music-notes {
+  margin-left: 100px;
+  font-size: 20px;
+}
+
+@keyframes resize {
+  0% {
+    padding: 0;
+  }
+  50% {
+    padding: 0 20px;
+  }
+}
+
+.music-notes {
+  animation-name: resize;
+  animation-duration: 1s;
+  animation-iteration-count: 10;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+
+
+
+
+
+
+
+
+
