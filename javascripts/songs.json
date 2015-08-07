@@ -5,19 +5,43 @@
     { 
       "name": "The Logical Song",
       "artist": "Supertramp",
-      "album": "Breakfast in America"     
+      "album": "Breakfast in America",
+      "genre": "Pop"    
     },
    
     { 
       "name": "Another Brick in the Wall",
       "artist": "Pink Floyd",
-      "album": "The Wall"     
+      "album": "The Wall",
+      "genre": "Rock"     
     },
     
     {
       "name": "Welcome to the Jungle",
       "artist": "Guns & Roses",
-      "album": "Appetite for Destruction"      
+      "album": "Appetite for Destruction",
+      "genre": "Rock"     
+    },
+
+    { 
+      "name": "Ironic",
+      "artist": "Alanis Morisette",
+      "album": "Jagged Little Pill",
+      "genre": "Pop"     
+    },
+   
+    { 
+      "name": "Waking Light",
+      "artist": "Beck",
+      "album": "Morning Phase",
+      "genre": "Pop"      
+    },
+   
+    { 
+      "name": "There's No Way Out Of Here",
+      "artist": "David Gilmour",
+      "album": "David Gilmour",
+      "genre": "Rock"      
     }
   ]
 }

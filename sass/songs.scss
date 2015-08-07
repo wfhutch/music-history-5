@@ -1,0 +1,51 @@
+// .first-field {
+//   margin-top: 100px;
+// }
+
+
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #333;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+
+body {
+  background: -webkit-radial-gradient(#41a1d1, white); 
+  background: -o-radial-gradient(#41a1d1, white); 
+  background: -moz-radial-gradient(#41a1d1, white); 
+  background: radial-gradient(#41a1d1, white); 
+}
+
+label {
+  font-size: 28px;
+}
+
+.nav-li {
+  display: inline-block;
+  padding: 30px;
+  font-size: 16px;
+}
+
+.glyphicon.glyphicon-equalizer {
+  font-size: 30px;
+}
+
+.navbar {
+  background-color: #41a1d1;
+}
+
+.nav-li {
+  display: inline-block;
+  padding: 30px;
+  font-size: 16px;
+}
+
+.nav-li a {
+  color: blue;
+}
+
+.nav li:first-child {
+  margin-left: 20px;
+}

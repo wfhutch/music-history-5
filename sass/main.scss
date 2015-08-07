@@ -20,6 +20,7 @@ body {
   background: -o-radial-gradient(#41a1d1, white); /* For Opera 11.6 to 12.0 */
   background: -moz-radial-gradient(#41a1d1, white); /* For Firefox 3.6 to 15 */
   background: radial-gradient(#41a1d1, white); /* Standard syntax */
+  padding: 100px;
 }
 
 .nav-li {
@@ -36,6 +37,11 @@ body {
   margin-left: 20px;
 }
 
+#options-box {
+  // position: fixed;
+  margin-top: 20px;
+}
+
 input[type=range] {
   margin-bottom: 25px;
 }
@@ -45,10 +51,10 @@ legend {
   font-size: 20px;
 }
 
-div.genre {
-  font-size: 15px;
-  margin-top: 20px;
-}
+// div.genre {
+//   font-size: 15px;
+//   margin-top: 20px;
+// }
 
 div.box{
   font-size: 30px;
@@ -91,7 +97,7 @@ label {
 }
 
 .music-notes {
-  margin-left: 100px;
+  margin-left: 10px;
   font-size: 20px;
 }
 
@@ -107,10 +113,12 @@ label {
 .music-notes {
   animation-name: resize;
   animation-duration: 1s;
-  animation-iteration-count: 10;
+  animation-iteration-count: 4;
   animation-direction: alternate;
   animation-timing-function: ease-in-out;
 }
+
+
 
 
 

@@ -10,16 +10,17 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid nav-div">
       <span class="glyphicon glyphicon-equalizer" aria-hidden="true"></span>
-      <li class="nav-li"><a href="#">Add Music</a></li>
+      <li class="nav-li"><a href="#">Home</a></li>
+      <li class="nav-li"><a href="songs.html">Add Music</a></li>
       <li class="nav-li"><a href="#">View Music</a></li>
       <li class="nav-li"><a href="#">Profile</a></li>
     </div>
   </nav>
 
-  <div class="container">   <!-- This div holds the whole grid -->
+  <div class="container-fluid">   <!-- This div holds the whole grid -->
     <div class="row">
       <div id="options-box" class="col-md-3 choices">  <!-- This div holds content in the left hand options box -->
         <div class="row slider">  <!-- Slider row -->
@@ -36,38 +37,23 @@
           <div class="col-md-5">  <!-- Artist Button --> 
             <div class="artist">
               <legend>Artist:</legend>
-                <div class="btn-group">
-                <button type="button" class="btn btn-primary btn-sm dropdown-toggle artist-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Select <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Supertramp</a></li>
-                  <li><a href="#">Pink Floyd</a></li>
-                  <li><a href="#">Guns & Roses</a></li>
-                  <li><a href="#">Alanis Morrisette</a></li>
-                  <li><a href="#">Beck</a></li>
-                  <li><a href="#">David Gilmour</a></li>
-                </ul>
-                </div>
+                <select class="form-control" id="artists">
+
+                </select>
+                  
             </div>
           </div>  <!-- End Artist Button -->
           <div class="col-md-5">  <!-- Album Button -->
-            <div class="album">
+            <div>
               <legend >Album:</legend>
             </div>
 
-            <div class="btn-group">
-              <button type="button" class="btn btn-primary btn-sm dropdown-toggle album-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Select <span class="caret"></span>
-              </button>
-              <ul class="dropdown-menu">
-                <li><a href="#">Morning Phase</a></li>
-                <li><a href="#">The Wall</a></li>
-                <li><a href="#">Jagged Little Pill</a></li>
-                <li><a href="#">Breakfast In America</a></li>
-                <li><a href="#">David Gilmour</a></li>
-              </ul>
-            </div>
+            <select class="form-control" id="album">
+
+            </select>
+
+
+            
           </div>  <!-- End Album Button -->
           <div class="col-md-1"></div>  <!-- Empty spacer -->
         </div>  <!-- End Album/Artist select box row -->
@@ -75,21 +61,22 @@
         <div class="row">  <!-- Start genre heading row -->
           <div class="col-md-1"></div>
           <div class="col-md-10">
-            <div class="genre">Genre:</div>
+            <legend class="genre">Genre:</legend>
           </div>
           <div class="col-md-1"></div>
         </div>  <!-- End genre row -->
-          
+       
+      <form id="checkboxes" name="checkboxes">   
         <div class="row genre-table">  <!-- First row of checkboxes -->
           <div class="col-md-1"></div>  <!-- Empty space -->
           <div class="col-md-5">
             <div>
-              <label><input type="checkbox"> Rock</label>
+              <label><input id="rock" type="checkbox"> Rock</label>
             </div>
           </div>
           <div class="col-md-5">
             <div>
-              <label><input type="checkbox"> Classical</label>
+              <label><input id="country"type="checkbox"> Country</label>
             </div>
           </div>
           <div class="col-md-1"></div>  <!-- Empty space -->
@@ -97,20 +84,20 @@
         <div class="row genre-table">
           <div class="col-md-1"></div>  <!-- Empty space -->
           <div class="col-md-5">
-            <label><input type="checkbox"> Pop</label>
+            <label><input id="pop" type="checkbox"> Pop</label>
           </div>
           <div class="col-md-5">
-            <label><input type="checkbox"> Jazz</label>
+            <label><input id="jazz" type="checkbox"> Jazz</label>
           </div>
           <div class="col-md-1"></div>  <!-- Empty space -->
         </div>
         <div class="row genre-table">
           <div class="col-md-1"></div>  <!-- Empty space -->
           <div class="col-md-5">
-            <label><input type="checkbox"> Blues</label>
+            <label><input id="blues" type="checkbox"> Blues</label>
           </div>
           <div class="col-md-5">
-            <label><input type="checkbox"> Hip Hop</label>
+            <label><input id="rap" type="checkbox"> Rap</label>
           </div>
           <div class="col-md-1"></div>  <!-- Empty space -->
         </div>  <!-- End of all checkboxes -->
@@ -119,12 +106,13 @@
           <div class="col-md-1"></div>
           <div class="col-md-10">
             <div class="button filter">
-              <button type="button" class="btn btn-primary btn-sm filter-button">Filter</button>
+              <button id="filter" class="btn btn-primary btn-sm filter-button">Filter By Genre</button>
             </div>
           </div>
           <div class="col-md-1"></div>
         </div>  <!-- End filter button row -->
-      
+      </form>
+
       </div>  <!-- End options box -->
     
       <div class="col-md-1"></div> <!-- Spacer between content boxes -->      
@@ -147,63 +135,4 @@
 
 
 
- <!--  <div class="container">
-  <div class="row">
-    <div class="col-md-12">
-    <header id="header">
-      <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <div class="navbar-header">
-
-          </div>
-        </div>
-      </nav>
-    </header>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-3">
-
-      <div class="row">
-        <div class="col-md-10">
-          <div>
-            
-          </div>
-        </div>
-      </div>
-
-
-      <div class="row">
-        <div class="col-md-1">
-
-
-
-          
-        </div>
-        <div class="col-md-1">
-
-          
-        </div>
-      </div>
-
-      
-
-
-      
-    </div>
-
-    <div class="col-md-8">
-
-      
-    </div>
-  </div>
-</div>
-
-
-
-</body>
-</html>
-
-
- -->
+ 

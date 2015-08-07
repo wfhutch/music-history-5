@@ -16,7 +16,8 @@ body {
   background: -moz-radial-gradient(#41a1d1, white);
   /* For Firefox 3.6 to 15 */
   background: radial-gradient(#41a1d1, white);
-  /* Standard syntax */ }
+  /* Standard syntax */
+  padding: 100px; }
 
 .nav-li {
   display: inline-block;
@@ -29,16 +30,15 @@ body {
 .nav li:first-child {
   margin-left: 20px; }
 
+#options-box {
+  margin-top: 20px; }
+
 input[type=range] {
   margin-bottom: 25px; }
 
 legend {
   border-bottom: none;
   font-size: 20px; }
-
-div.genre {
-  font-size: 15px;
-  margin-top: 20px; }
 
 div.box {
   font-size: 30px; }
@@ -64,7 +64,7 @@ label {
   margin-bottom: 15px; }
 
 .music-notes {
-  margin-left: 100px;
+  margin-left: 10px;
   font-size: 20px; }
 
 @keyframes resize {
@@ -75,7 +75,7 @@ label {
 .music-notes {
   animation-name: resize;
   animation-duration: 1s;
-  animation-iteration-count: 10;
+  animation-iteration-count: 4;
   animation-direction: alternate;
   animation-timing-function: ease-in-out; }
 
