@@ -21,61 +21,65 @@ requirejs.config({
 requirejs(["jquery", "hbs", "bootstrap", "dom-access","populate-songs","get-more-songs", "new-songs", "filter", "firebase", "lodash"], 
   function($, Handelbars, bootstrap, dom, populate, get, newsongs, filter, _firebase, _) {
   
-  var myFirebaseRef = new Firebase("https://flickering-fire-6777.firebaseio.com/");
-  myFirebaseRef.child("songs").on("value", function(snapshot) {
-  // console.log(snapshot.val());
-   
-  var songs = snapshot.val();
-  // console.log(songs);
+    var myFirebaseRef = new Firebase("https://flickering-fire-6777.firebaseio.com/");
+    myFirebaseRef.child("songs").on("value", function(snapshot) {
+    // console.log(snapshot.val());
+     
+    var songs = snapshot.val();
+    // console.log(songs);
 
-  var allSongsArray = [];
-  for (var i in songs) {
-    allSongsArray[allSongsArray.length] = songs[i];
-  }
-  // console.log(allSongsArray);
+    var allSongsArray = [];
+    for (var i in songs) {
+      allSongsArray[allSongsArray.length] = songs[i];
+    }
+    // console.log(allSongsArray);
 
-  var allSongsObject = {songs: allSongsArray};
-  // console.log(allSongsObject);
+    var allSongsObject = {songs: allSongsArray};
+    // console.log(allSongsObject);
 
-  var originalSongsArray = allSongsArray.slice();
+    var originalSongsArray = allSongsArray.slice();
+    // console.log(originalSongsArray);
 
-  require(['hbs!../templates/songs'], function(songTemplate) {
-    dom.html(songTemplate(allSongsObject));
-    $(".deleteButton").on("click", function() {
-    $(this).closest("div").remove();
+    require(['hbs!../templates/songs'], function(songTemplate) {
+      dom.html(songTemplate(allSongsObject));
+      $(".deleteButton").on("click", function() {
+      $(this).closest("div").remove();
+      });
     });
+
+
+
+    var uniqueAlbums = _.chain(allSongsArray)
+                      .uniq('album')
+                      .pluck('album')
+                      .value();
+  // console.log('uniqueAlbums', uniqueAlbums);
+
+    var uniqueArtists = _.chain(allSongsArray)
+                        .uniq('artist')
+                        .pluck('artist')
+                        .value();
+    // console.log('uniqueArtists', uniqueArtists);
+
+    require(['hbs!../templates/artist'], function(artistTemplate) {
+      $("#artists").html(artistTemplate({'artists': uniqueArtists}));
+      });
+
+    require(['hbs!../templates/album'], function(albumTemplate) {
+      $("#album").html(albumTemplate({'album': uniqueAlbums}));      
+      });
+
+      $("#filter").click(function(e){
+        e.preventDefault();
+        filter.findGenre(allSongsObject);
+      });
+
+    });
+
   });
 
 
-
-var uniqueAlbums = _.chain(allSongsArray)
-                    .uniq('album')
-                    .pluck('album')
-                    .value();
-// console.log('uniqueAlbums', uniqueAlbums);
-
-var uniqueArtists = _.chain(allSongsArray)
-                    .uniq('artist')
-                    .pluck('artist')
-                    .value();
-// console.log('uniqueArtists', uniqueArtists);
-
-require(['hbs!../templates/artist'], function(artistTemplate) {
-  $("#artists").html(artistTemplate({'artists': uniqueArtists}));
-  });
-
-require(['hbs!../templates/album'], function(albumTemplate) {
-  $("#album").html(albumTemplate({'album': uniqueAlbums}));      
-  });
-
-
-
-
-
-});
-
-
-  var songsObject = {};
+  // var songsObject = {};
 
   
   // populate.querySongs(function (songs) {
@@ -96,12 +100,6 @@ require(['hbs!../templates/album'], function(albumTemplate) {
       // });
   // });
 
-  // $("#filter").click(function(e){
-  //   e.preventDefault();
-  //   filter.boxId(songsObject);
-  // });
-
-});
 
 
 
