@@ -18,8 +18,8 @@ requirejs.config({
 
 
 
-requirejs(["jquery", "hbs", "bootstrap", "dom-access","populate-songs","get-more-songs", "new-songs", "filter", "firebase", "lodash"], 
-  function($, Handelbars, bootstrap, dom, populate, get, newsongs, filter, _firebase, _) {
+requirejs(["jquery", "hbs", "bootstrap", "dom-access","populate-songs","get-more-songs", "new-songs", "filter", "firebase", "lodash", "selected", "selected-album"], 
+  function($, Handelbars, bootstrap, dom, populate, get, newsongs, filter, _firebase, _, selected, sel_alb) {
   
     var myFirebaseRef = new Firebase("https://flickering-fire-6777.firebaseio.com/");
     myFirebaseRef.child("songs").on("value", function(snapshot) {
@@ -40,42 +40,55 @@ requirejs(["jquery", "hbs", "bootstrap", "dom-access","populate-songs","get-more
     var originalSongsArray = allSongsArray.slice();
     // console.log(originalSongsArray);
 
-    require(['hbs!../templates/songs'], function(songTemplate) {
+    require(['hbs!../templates/songs'], function(songTemplate) {    //Add list of all songs to home page
       dom.html(songTemplate(allSongsObject));
       $(".deleteButton").on("click", function() {
       $(this).closest("div").remove();
       });
     });
 
-
-
-    var uniqueAlbums = _.chain(allSongsArray)
-                      .uniq('album')
-                      .pluck('album')
-                      .value();
-  // console.log('uniqueAlbums', uniqueAlbums);
-
-    var uniqueArtists = _.chain(allSongsArray)
+    var uniqueArtists = _.chain(allSongsArray)    //Create list of artists
                         .uniq('artist')
                         .pluck('artist')
                         .value();
     // console.log('uniqueArtists', uniqueArtists);
 
-    require(['hbs!../templates/artist'], function(artistTemplate) {
-      $("#artists").html(artistTemplate({'artists': uniqueArtists}));
+    var uniqueAlbums = _.chain(allSongsArray)    //Creat list of albums
+                      .uniq('album')
+                      .pluck('album')
+                      .value();
+    // console.log('uniqueAlbums', uniqueAlbums);
+
+
+    require(['hbs!../templates/artist'], function(artistTemplate) {    //Populate Artist Select Box
+      $("#artists").append(artistTemplate({'artists': uniqueArtists}));
       });
 
-    require(['hbs!../templates/album'], function(albumTemplate) {
-      $("#album").html(albumTemplate({'album': uniqueAlbums}));      
-      });
+    
 
-      $("#filter").click(function(e){
+      $("#filter").click(function(e){    //Call function to list songs by genre on home page  
         e.preventDefault();
         filter.findGenre(allSongsObject);
       });
 
-    });
+      $("#artists").change(function() {    //Call function to put all songs by particular aritist on page
+        var selectedArtist = ($(this).val());
+        // console.log(selectedArtist);
+        selected.findArtist(selectedArtist, allSongsObject);
+      });
 
+      $("#album").change(function() {
+        var selectedAlbum = ($(this).val());
+
+        if (selectedAlbum === "All") {
+          console.log("all selected");
+        }
+        // console.log(selectedAlbum, allSongsObject);
+        sel_alb.findAlbum(selectedAlbum, allSongsObject);
+      });
+
+      
+    });
   });
 
 
@@ -101,11 +114,6 @@ requirejs(["jquery", "hbs", "bootstrap", "dom-access","populate-songs","get-more
   // });
 
 
-
-
-
-
-
   //   $("body").on("click", ".moreButton", function() {
   //       $(".moreButton").css("display", "none"); 
       
@@ -122,7 +130,6 @@ requirejs(["jquery", "hbs", "bootstrap", "dom-access","populate-songs","get-more
   // }); 
 
 
-
     // console.log("data", bob);  
     // for (var i = 0; i < bob.length; i++) {
     //   var songData = "";
@@ -135,8 +142,6 @@ requirejs(["jquery", "hbs", "bootstrap", "dom-access","populate-songs","get-more
     //   songData += "</div>";
     //   dom.append(songData);
     // }
-
-
 
 
       // for (var i = 0; i < tom.length; i++) {
@@ -152,28 +157,6 @@ requirejs(["jquery", "hbs", "bootstrap", "dom-access","populate-songs","get-more
       //   dom.append(songData);
       // }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-        
 
 
 

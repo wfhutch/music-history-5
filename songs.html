@@ -22,42 +22,46 @@
 
   <div class="container-fluid">
     <form class="form-horizontal">
-      <div class="form-group first-field">
-        <label class="col-sm-4 control-label">Enter Song Name:</label>
+      <div class="row form-group first-field">
+        <label class="col-sm-5 control-label">Enter Song Name:</label>
         <div class="col-sm-4">
           <input id="song-name" type="text" class="form-control" placeholder="Song Name">
         </div>
-        <div class="col-sm-4"></div>
+        <div class="col-sm-3"></div>
       </div>
-          <div class="form-group song-name">
-        <label class="col-sm-4 control-label">Enter Artist Name:</label>
+      <div class="row form-group song-name">
+        <label class="col-sm-5 control-label">Enter Artist Name:</label>
         <div class="col-sm-4">
           <input id="artist-name" type="text" class="form-control" placeholder="Artist Name">
         </div>
-        <div class="col-sm-4"></div>
+        <div class="col-sm-3"></div>
       </div>
-      <div class="form-group song-name">
-        <label class="col-sm-4 control-label">Enter Album Name:</label>
+      <div class="row form-group song-name">
+        <label class="col-sm-5 control-label">Enter Album Name:</label>
         <div class="col-sm-4">
           <input id="album-name" type="text" class="form-control" placeholder="Album Name">
         </div>
-        <div class="col-sm-4"></div>
+        <div class="col-sm-3"></div>
       </div>
-      <div class="form-group song-name">
-        <label class="col-sm-4 control-label">Enter Genre:</label>
+      <div class="row form-group song-name">
+        <label class="col-sm-5 control-label">Enter Genre:</label>
         <div class="col-sm-4">
-          <input id="genre" type="text" class="form-control" placeholder="Rock, Pop, Country, Jazz, Blues, or Rap">
+          <input id="genre" type="text" class="form-control" placeholder="Rock, Pop, Country, Jazz, Blues, Alternative or Rap">
         </div>
-        <div class="col-sm-4"></div>
+        <div class="col-sm-3"></div>
       </div>
-      <div class="col-sm-4"></div>
-      <div class="col-sm-6">
-        <button id="new-song" class="btn btn-default btn-primary" onClick="history.go(0)" value="Submit">Submit</button>
+      <div class="row">
+        <div class="col-sm-5"></div>
+        <div class="col-sm-6">
+          <button id="new-song" class="btn btn-default btn-success btn-lg" value="Submit">Submit New Song</button>
+        </div>
+        <div class="col-sm-1"></div>
       </div>
-      <div class="col-sm-2"></div>
     </form>
   </div>
-
+<script data-main="javascripts/main" src="bower_components/requirejs/require.js"></script>
+</body>
+</html>
 
 
 
@@ -135,10 +139,8 @@
 
 
 <!-- <script src="bower_components/jquery/dist/jquery.min.js"></script> -->
-<script data-main="javascripts/main" src="bower_components/requirejs/require.js"></script>
 <!-- <script type="text/javascript"  src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>  -->
-</body>
-</html>
+
 
 
 

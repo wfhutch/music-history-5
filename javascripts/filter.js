@@ -9,8 +9,10 @@ define(['jquery'], function($) {
       var boxes =el.getElementsByTagName("input");
       var boxId = [];
       var genreSongs = [];
+      
       for (i=0; i<boxes.length; i++) {
         if (boxes[i].checked) {
+
           boxId.push(boxes[i].value);
         }
       }
@@ -25,6 +27,18 @@ define(['jquery'], function($) {
           }  
         }
       }
+      
+      if (genreSongs.length === 0) {
+
+          require(['hbs!../templates/songs'], function(songTemplate) {
+          $("#content").html(songTemplate(songs));
+          $(".deleteButton").on("click", function() {
+          $(this).closest("div").remove();
+          });
+        });
+        $('input[type=checkbox]').attr('checked',false);
+
+      } else {
 
       var genreSongsObject = {songs: genreSongs};
       // console.log(genreSongsObject);
@@ -36,16 +50,12 @@ define(['jquery'], function($) {
         });
       });
           
-        // $("input:checkbox").removeAttr("checked");
         $('input[type=checkbox]').attr('checked',false);
-
 
           // console.log(boxId);
           // console.log(songs);
           // console.log(genreSongs);
-        
-
-
+      }  
     },
   };
 });

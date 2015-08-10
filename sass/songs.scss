@@ -11,15 +11,20 @@ body {
   color: $primary-color;
 }
 
-body {
-  background: -webkit-radial-gradient(#41a1d1, white); 
-  background: -o-radial-gradient(#41a1d1, white); 
-  background: -moz-radial-gradient(#41a1d1, white); 
-  background: radial-gradient(#41a1d1, white); 
+body{
+//   background: -webkit-radial-gradient(#41a1d1, white); 
+//   background: -o-radial-gradient(#41a1d1, white); 
+//   background: -moz-radial-gradient(#41a1d1, white); 
+//   background: radial-gradient(#41a1d1, white);  
+background: url("http://wallpapers.windowsace.com/pics/e/q/equalizer-wallpaper-iii-by-xtdoyx-on-deviantart-n-a-ibackgroundz.com.jpg")
 }
 
 label {
   font-size: 28px;
+  color: white;
+  padding: 20px;
+  padding-right: 130px;
+  padding-left: 130px;
 }
 
 .nav-li {
@@ -49,3 +54,11 @@ label {
 .nav li:first-child {
   margin-left: 20px;
 }
+
+#new-song {
+  outline: 1px solid black;
+}
+
+
+
+

@@ -16,10 +16,10 @@ body {
 
 
 body {
-  background: -webkit-radial-gradient(#41a1d1, white); /* Safari 5.1 to 6.0 */
-  background: -o-radial-gradient(#41a1d1, white); /* For Opera 11.6 to 12.0 */
-  background: -moz-radial-gradient(#41a1d1, white); /* For Firefox 3.6 to 15 */
-  background: radial-gradient(#41a1d1, white); /* Standard syntax */
+  background: -webkit-radial-gradient(#E1F4FA, #41a1d1); /* Safari 5.1 to 6.0 */
+  background: -o-radial-gradient(#E1F4FA, #41a1d1); /* For Opera 11.6 to 12.0 */
+  background: -moz-radial-gradient(#E1F4FA, #41a1d1); /* For Firefox 3.6 to 15 */
+  background: radial-gradient(#E1F4FA, #41a1d1); /* Standard syntax */
   padding: 100px;
 }
 
@@ -66,6 +66,10 @@ label {
   font-size: 12px;
   padding: 3px;
   font-weight: 600;
+}
+
+.genre {
+  margin-top: 20px;
 }
 
 #filter-btn {
@@ -117,6 +121,26 @@ label {
   animation-direction: alternate;
   animation-timing-function: ease-in-out;
 }
+
+
+.songInfo {
+  position: relative;
+  left: 40%;
+  // display: block;
+}
+
+#options-box {
+  position: fixed;
+  // float: left;
+}
+
+// #main-spacer {
+//   border: 1px solid blue;
+//   position: relative;
+//   left: 40%;
+//   display: block;
+// }
+
 
 
 

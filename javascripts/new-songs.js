@@ -18,7 +18,9 @@ $("#new-song").click(function(e) {
       url: "https://flickering-fire-6777.firebaseio.com/songs.json",
       method: "POST",
       data: JSON.stringify(songObj)
-    }).done();     
+    }).done(function () {
+        location.reload();
+    });     
   }); 
 });
 
