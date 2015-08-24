@@ -21,27 +21,6 @@
       "artist": "Guns & Roses",
       "album": "Appetite for Destruction",
       "genre": "Rock"     
-    },
-
-    { 
-      "name": "Ironic",
-      "artist": "Alanis Morisette",
-      "album": "Jagged Little Pill",
-      "genre": "Pop"     
-    },
-   
-    { 
-      "name": "Waking Light",
-      "artist": "Beck",
-      "album": "Morning Phase",
-      "genre": "Pop"      
-    },
-   
-    { 
-      "name": "There's No Way Out Of Here",
-      "artist": "David Gilmour",
-      "album": "David Gilmour",
-      "genre": "Rock"      
     }
   ]
 }

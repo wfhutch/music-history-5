@@ -9,32 +9,33 @@ define(['jquery'], function($) {
     var artistAlbums = [];
     var allArtistSongs = [];
 
-      // console.log(artist, songs);
+      console.log(artist, songs);
+
       for (i=0; i<songs.songs.length; i++) {
         if (artist === songs.songs[i].artist) {
           artistAlbums.push(songs.songs[i].album);
           allArtistSongs.push(songs.songs[i]);
         }
       }
-      // console.log(allArtistSongs);
-      // console.log(artistAlbums);
+
+      console.log(allArtistSongs);
+      console.log(artistAlbums);
 
       var uniqueAlbums = _.uniq(artistAlbums);
+      console.log(uniqueAlbums);
 
       var allArtistSongsObject = {songs: allArtistSongs};
+      console.log(allArtistSongsObject);
 
       require(['hbs!../templates/songs'], function(songTemplate) {    
             $("#content").html(songTemplate(allArtistSongsObject));
+            console.log("passed to template", allArtistSongsObject);
             $(".deleteButton").on("click", function() {
             $(this).closest("div").remove();
             });
           }); 
 
-
-      // console.log(uniqueAlbums);
-
       require(['hbs!../templates/album'], function(albumTemplate) { 
-        // $("#album").empty();
         $("#album").html(albumTemplate({'album': uniqueAlbums}));     
       });
     }
