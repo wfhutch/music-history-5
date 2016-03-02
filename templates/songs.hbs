@@ -1,9 +1,9 @@
 <div class="songs">
   {{#each songs}}
-  <div id="song-key#{{@key}}">
+  <div data-key={{key}}>
     <h2>{{name}}<span class='glyphicon glyphicon-music music-notes' aria-hidden='true'></span></h2>
     <p class="songinfo">By {{artist}} on the album {{album}}</p>
-    <button type='button' class='btn btn-danger btn-xs deleteButton'>Remove</button>
+    <button id="{{key}}" type='button' class='btn btn-danger btn-xs deleteButton'>Remove</button>
   </div>
   {{/each}}
 </div>
