@@ -1,20 +1,17 @@
-define(['jquery'], function($) {
+import * as $ from "jquery";
 
-  return {
+export default {
     findAlbum: function(album, songs) {
       
       var allAlbumSongs = [];
 
-      for(i=0; i<songs.songs.length; i++) {
+      for(let i=0; i<songs.songs.length; i++) {
         if (album === songs.songs[i].album) {
           allAlbumSongs.push(songs.songs[i]);
         }
       }
 
-    // console.log(allAlbumSongs);
-
       var allAlbumSongsObject = {songs: allAlbumSongs};
-    // console.log(allAlbumSongsObject);
 
       require(['hbs!../templates/songs'], function(songTemplate) {    
         $("#content").html(songTemplate(allAlbumSongsObject));
@@ -23,5 +20,4 @@ define(['jquery'], function($) {
         }); 
       });     
     }
-  };
-});
+};

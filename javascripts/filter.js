@@ -19,9 +19,6 @@ define(['jquery'], function($) {
 
       for (i=0; i<boxId.length; i++) {
         for(j=0; j<songs.songs.length; j++) {
-          // console.log([i]);
-          // console.log([j]);
-          // console.log(songs.songs[j].genre);
           if (boxId[i] === songs.songs[j].genre) {
             genreSongs.push(songs.songs[j]);
           }  
@@ -41,7 +38,6 @@ define(['jquery'], function($) {
       } else {
 
       var genreSongsObject = {songs: genreSongs};
-      // console.log(genreSongsObject);
 
       require(['hbs!../templates/songs'], function(songTemplate) {
         $("#content").html(songTemplate(genreSongsObject));
@@ -51,10 +47,6 @@ define(['jquery'], function($) {
       });
           
         $('input[type=checkbox]').attr('checked',false);
-
-          // console.log(boxId);
-          // console.log(songs);
-          // console.log(genreSongs);
       }  
     },
   };

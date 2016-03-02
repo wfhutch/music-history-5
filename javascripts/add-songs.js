@@ -1,6 +1,4 @@
 
-
-
 define(['jquery', 'q', 'authentication'], function($, Q, auth) {
 
   return function() {
