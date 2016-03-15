@@ -20,6 +20,7 @@ define(function(require) {
 
   var songs = snapshot.val();
 
+
   var allSongsArray = [];
 
   // Add the unique key given by Firebase to each song
@@ -32,8 +33,6 @@ define(function(require) {
   console.log("Songs with key ", allSongsArray);
 
   var allSongsObject = {songs: allSongsArray};
-
-  var originalSongsArray = allSongsArray.slice();
 
   require(['hbs!../templates/songs'], function(songTemplate) {    //Add list of all songs to home page
     dom.html(songTemplate(allSongsObject));
@@ -57,7 +56,7 @@ define(function(require) {
                       .pluck('artist')
                       .value();
 
-  var uniqueAlbums = _.chain(allSongsArray)    //Creat list of albums
+  var uniqueAlbums = _.chain(allSongsArray)    //Create list of albums
                     .uniq('album')
                     .pluck('album')
                     .value();
@@ -88,13 +87,13 @@ define(function(require) {
     });
 
     $(document).on("click", ".deleteButton", function() {
-      console.log("delete button clicked");
       var songKey = $(this).attr("id");
-      console.log("songKey ", songKey);
-      var uid = auth.getUid();
-      console.log("uid ", uid);
-      var firebaseRef = new Firebase('https://flickering-fire-6777.firebaseio.com/songs' + songKey);
-      firebaseRef.remove();
+      console.log("Key", songKey);
+      var songUid = auth.getUid();
+      if(songs[key].uid === songUid) {
+        var firebaseRef = new Firebase('https://flickering-fire-6777.firebaseio.com/songs/' + songKey);
+        firebaseRef.remove();
+      }  
     });
   });
 });

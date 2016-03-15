@@ -18,21 +18,16 @@ export default {
       }
     }
 
-    console.log(allArtistSongs);
-    console.log(artistAlbums);
-
     var uniqueAlbums = _.uniq(artistAlbums);
-    console.log(uniqueAlbums);
 
     var allArtistSongsObject = {songs: allArtistSongs};
-    console.log(allArtistSongsObject);
 
     require(['hbs!../templates/songs'], function(songTemplate) {    
           $("#content").html(songTemplate(allArtistSongsObject));
           console.log("passed to template", allArtistSongsObject);
-          $(".deleteButton").on("click", function() {
-          $(this).closest("div").remove();
-          });
+          // $(".deleteButton").on("click", function() {
+          // $(this).closest("div").remove();
+          // });
         }); 
 
     require(['hbs!../templates/album'], function(albumTemplate) { 
